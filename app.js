@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+require('dotenv').config();
+const mongoUri = process.env.MONGO_URI;
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://pravirstudy:l9bCqH0MJzLQOtFl@backenddb.li8va.mongodb.net/?retryWrites=true&w=majority&appName=BackEndDB')
+mongoose.connect('mongoUri')
   .then(() => {
     console.log('Connected to db');
   })
