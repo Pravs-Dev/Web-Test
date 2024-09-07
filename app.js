@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // MongoDB connection
-mongoose.connect('your-mongo-db-uri-here')
+mongoose.connect('mongodb+srv://pravirstudy:l9bCqH0MJzLQOtFl@backenddb.li8va.mongodb.net/?retryWrites=true&w=majority&appName=BackEndDB')
   .then(() => {
     console.log('Connected to db');
   })
