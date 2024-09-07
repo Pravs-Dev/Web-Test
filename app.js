@@ -1,22 +1,18 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
 
-
-mongoose.connect("mongodb+srv://pravirstudy:l9bCqH0MJzLQOtFl@backenddb.li8va.mongodb.net/PORJECTAPI?retryWrites=true&w=majority&appName=BackEndDB")
-.then(() =>{
-
+// MongoDB connection
+mongoose.connect('your-mongo-db-uri-here')
+  .then(() => {
     console.log('Connected to db');
+  })
+  .catch(() => {
+    console.log('Connection failed');
+  });
 
-})
-.catch(()=>{
-    
-    console.log('Connected failed');
-
-})
-
-app.get('/',(req,res) =>{
-res.send('Hello from me');
+app.get('/', (req, res) => {
+  res.send('hello from me');
 });
 
-module.exports =app;
+module.exports = { app, mongoose };  // Export both app and mongoose
