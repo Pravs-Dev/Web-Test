@@ -5,7 +5,7 @@ require('dotenv').config();
 const mongoUri = process.env.MONGO_URI;
 
 // MongoDB connection
-mongoose.connect('mongoUri')
+mongoose.connect(mongoUri)
   .then(() => {
     console.log('Connected to db');
   })
@@ -15,6 +15,10 @@ mongoose.connect('mongoUri')
 
 app.get('/', (req, res) => {
   res.send('hello from me');
+});
+
+app.get('/other', (req, res) => {
+  res.send('it still works');
 });
 
 module.exports = { app, mongoose };  // Export both app and mongoose
